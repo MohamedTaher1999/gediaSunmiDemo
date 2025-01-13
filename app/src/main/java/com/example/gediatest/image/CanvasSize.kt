@@ -1,0 +1,17 @@
+package com.example.gediatest.image
+
+import android.view.View
+
+/**
+ * Created on : August 02, 2020
+ * Author     : zetbaitsu
+ * Name       : Zetra
+ * GitHub     : https://github.com/zetbaitsu
+ */
+sealed class CanvasSize(val specSize: Int) {
+    object WrapContent :
+        CanvasSize(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+
+    data class Specific(private val size: Int) :
+        CanvasSize(View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY))
+}
